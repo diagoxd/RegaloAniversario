@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Un año en nuestro Universo 💫</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas class="universe-bg"></canvas>
+  <div id="decor-extras"></div>
 
+  <!-- Portada -->
+  <div class="page" id="page0">
+    <div class="planet planet1">💖</div>
+    <div class="title">Un año en nuestro universo</div>
+    <div class="subtitle">Una historia, dos almas viajando juntas.</div>
+    <div class="actions">
+      <button class="btn-nav" onclick="showPage('page1')">Comenzar 🚀</button>
+    </div>
+  </div>
+
+  <!-- Nos conocimos -->
+  <div class="page scroll-page hidden" id="page1">
+    <div class="intro-nos-conocimos">
+      <div class="planet planet2">🌠</div>
+      <div class="title">Nos conocimos</div>
+      <div class="subtitle">
+        Nunca me voy a cansar de agradecer de haberte <br>
+        conocido, sin duda sos lo mejor que me pasó.
+      </div>
+    </div>
+    <div class="progress-balls">
+      <span class="pb-dot" id="pb-dot-0"></span>
+      <span class="pb-dot" id="pb-dot-1"></span>
+      <span class="pb-dot" id="pb-dot-2"></span>
+    </div>
+    <div class="photo-gallery">
+      <div class="photo-item anim-on-scroll parallax-photo" data-idx="0">
+        <img src="https://i.ibb.co/HT3fPryk/foto1.jpg" alt="Recuerdo 1" />
+        <div class="caption">Nuestra primera foto (no fue la primera pero las otras no me gustaron)</div>
+      </div>
+      <div class="memory-phrase anim-on-scroll">Siempre voy a recordar estos momentos juntos ⭐</div>
+      <div class="photo-item anim-on-scroll parallax-photo" data-idx="1">
+        <img src="https://i.ibb.co/Kzsv7LTT/foto2.jpg" alt="Recuerdo 2" />
+        <div class="caption">Nuestra primera foto en lo que posteriormente terminó siendo nuestro lugar seguro</div>
+      </div>
+      <div class="memory-phrase anim-on-scroll">Una de tantas noches donde te amé muchísimo 💫</div>
+      <div class="photo-item anim-on-scroll parallax-photo" data-idx="2">
+        <img src="https://i.ibb.co/mrDmGHqM/foto3.jpg" alt="Recuerdo 3" />
+        <div class="caption">Una noche que jamas vamos a olvidar, amanecimos juntos y me sentía muy enamorado de ti (como ahora)</div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn-nav" onclick="showPage('page0')">⬅</button>
+      <button class="btn-nav" id="btn-to-constellation">➡</button>
+    </div>
+  </div>
+
+  <!-- CONSTELACIÓN D + T -->
+  <div class="page hidden" id="constellationPage">
+    <div class="constellation-wrap">
+      <canvas id="constellation" width="360" height="220"></canvas>
+      <div class="constellation-label">D + T</div>
+      <button class="btn-nav constellation-btn" id="constellation-next" onclick="showPage('page2')">Continuar ✨</button>
+    </div>
+  </div>
+
+  <!-- Empezó todo -->
+  <div class="page hidden" id="page2">
+    <div class="planet planet3">✨</div>
+    <div class="title">Empezó todo</div>
+    <div class="subtitle">
+      Palabras, miradas y algo nuevo empezando a nacer...<br>
+      <br>
+      <small>(Aquí también puedes poner foto, video o anécdota)</small>
+    </div>
+    <div class="actions">
+      <button class="btn-nav" onclick="showPage('constellationPage')">⬅</button>
+      <button class="btn-nav" onclick="showPage('page3')">➡</button>
+    </div>
+  </div>
+
+  <!-- Primer gran paso -->
+  <div class="page hidden" id="page3">
+    <div class="planet planet4">🪐</div>
+    <div class="title">Primer gran paso</div>
+    <div class="subtitle">
+      El momento en que supimos que esto era real.<br>
+      <br>
+      <small>(Agrega aquí foto/video o mensaje especial)</small>
+    </div>
+    <div class="actions">
+      <button class="btn-nav" onclick="showPage('page2')">⬅</button>
+      <button class="btn-nav" onclick="showPage('page4')">➡</button>
+    </div>
+  </div>
+  <div class="page hidden" id="page4">
+    <div class="planet planet5">🌴</div>
+    <div class="title">Vacaciones?</div>
+    <div class="subtitle">
+      Primero nuestras pequeñas aventuras, después grandes recuerdos.<br>
+      <br>
+      <small>(Aquí puedes poner foto/video de las vacaciones)</small>
+    </div>
+    <div class="actions">
+      <button class="btn-nav" onclick="showPage('page3')">⬅</button>
+      <button class="btn-nav" onclick="showPage('page5')">➡</button>
+    </div>
+  </div>
+  <div class="page hidden" id="page5">
+    <div class="planet planet6">🌆</div>
+    <div class="title">Vida Montevideana</div>
+    <div class="subtitle">
+      Nuestra rutina, nuestras calles, una ciudad que es testigo de nuestro amor.<br>
+      <br>
+      <small>(Aquí puedes poner una foto, cita o anécdota de Montevideo)</small>
+    </div>
+    <div class="actions">
+      <button class="btn-nav" onclick="showPage('page4')">⬅</button>
+      <button class="btn-nav" onclick="showPage('page6')">➡</button>
+    </div>
+  </div>
+  <div class="page hidden" id="page6">
+    <div class="planet planet7">💞</div>
+    <div class="title">Mucho amor</div>
+    <div class="subtitle">
+      Cada día, más y más motivos para sonreír juntos.<br>
+      <br>
+      <small>(Pon aquí mensajes, emojis, gifs o lo que quieras)</small>
+    </div>
+    <div class="actions">
+      <button class="btn-nav" onclick="showPage('page5')">⬅</button>
+      <button class="btn-nav" onclick="showPage('page7')">➡</button>
+    </div>
+  </div>
+  <div class="page hidden" id="page7">
+    <div class="planet planet1">🚀</div>
+    <div class="title">¿Qué sigue?</div>
+    <div class="subtitle">
+      El futuro es nuestro universo por descubrir. Gracias por este primer año.<br>
+      <br>
+      <small>(Puedes dejar mensaje final o sorpresa)</small>
+    </div>
+    <div class="actions">
+      <button class="btn-nav" onclick="showPage('page6')">⬅</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
